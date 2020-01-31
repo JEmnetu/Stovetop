@@ -1,0 +1,1 @@
+INSERT INTO recipes (recipe_name, cook_time,) VALUES ()
