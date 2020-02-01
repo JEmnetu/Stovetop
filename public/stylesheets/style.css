@@ -1,4 +1,21 @@
 form.signup,
 form.login {
-  margin-top: 50px;
+    margin-top: 50px;
+}
+
+.navbar {
+    background-color: white;
+}
+
+.food-search {
+    margin-top: 20em;
+    margin-left: 30em;
+}
+
+.food-input {
+    border: solid 2px black;
+}
+
+body {
+    background-color: rgb(248, 249, 250);
 }
