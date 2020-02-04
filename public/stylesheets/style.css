@@ -7,9 +7,27 @@ form.login {
     background-color: white;
 }
 
-.food-search {
-    margin-top: 20em;
-    margin-left: 30em;
+.fa-user-circle:before{
+    font-size: 30px;
+    
+}
+.fa-user-circle{
+    float: right;
+}
+
+#search-container{
+ justify-content: center;
+ justify-items: center;
+}
+
+
+#search-page-logo-img{
+    height: 40px;
+    margin-bottom: 19px;
+}
+
+.col-md-4{
+    margin-top: 100px;
 }
 
 .food-input {
@@ -17,5 +35,5 @@ form.login {
 }
 
 body {
-    background-color: rgb(248, 249, 250);
+    background: #d9d9d9;
 }
