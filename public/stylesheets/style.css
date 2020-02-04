@@ -3,6 +3,7 @@ form.login {
     margin-top: 50px;
 }
 
+/* Navbar elements */
 .navbar {
     background-color: white;
 }
@@ -19,28 +20,32 @@ form.login {
     background-color:#ff0101;
 }
 
-#homepage-search {
-    margin: 20px 0 8px;
-}
-
 .food-input{
     border: black solid 1px;
+}
+
+/*  Homepage elements */
+#homepage-search {
+    margin: 20px 0 8px;
 }
 
 #search-row{
     justify-content: center;
     justify-items: center;
-   }
+}
 
 #search-page-logo-img{
-    height: 40px;
+    height: 60px;
     margin-bottom: 19px;
+}
+
+#navbar-logo-img{
+    height: 40px;
 }
 
 .col-md-4{
     margin-top: 100px;
 }
-
 
 body {
     background: #d9d9d9;
