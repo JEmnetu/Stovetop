@@ -25,6 +25,11 @@ nav {
     background-color:#ff0101;
 }
 
+.btn-secondary.dropdown-toggle{
+    background-color: rgb(17, 17, 17);
+}
+
+
 .food-input{
     border: black solid 1px;
 }
