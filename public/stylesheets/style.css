@@ -9,17 +9,28 @@ form.login {
 
 .fa-user-circle:before{
     font-size: 30px;
-    
 }
+
 .fa-user-circle{
     float: right;
 }
 
-#search-container{
- justify-content: center;
- justify-items: center;
+.btn-danger{
+    background-color:#ff0101;
 }
 
+#homepage-search {
+    margin: 20px 0 8px;
+}
+
+.food-input{
+    border: black solid 1px;
+}
+
+#search-row{
+    justify-content: center;
+    justify-items: center;
+   }
 
 #search-page-logo-img{
     height: 40px;
@@ -30,9 +41,6 @@ form.login {
     margin-top: 100px;
 }
 
-.food-input {
-    border: solid 2px black;
-}
 
 body {
     background: #d9d9d9;
