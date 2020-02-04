@@ -4,16 +4,21 @@ form.login {
 }
 
 /* Navbar elements */
-.navbar {
-    background-color: white;
+nav {
+    background-color: #222222;
 }
 
 .fa-user-circle:before{
     font-size: 30px;
+    color: white;
 }
 
 .fa-user-circle{
     float: right;
+}
+
+#navbarDropdownMenuLink {
+    color: white;
 }
 
 .btn-danger{
@@ -35,7 +40,7 @@ form.login {
 }
 
 #search-page-logo-img{
-    height: 60px;
+    height: 90px;
     margin-bottom: 19px;
 }
 
@@ -48,5 +53,10 @@ form.login {
 }
 
 body {
-    background: #d9d9d9;
+    /* background: #d9d9d9; */
+    background-image: url("../images/assorted-salads-on-bowls-1640773.jpg");
+    background-size: cover;
+    background-position: 100%;
+    background-repeat:   no-repeat;
+    /* background-position: center center;  */
 }
