@@ -46,4 +46,15 @@ module.exports = function(app) {
       });
     }
   });
+
+  
+  // //get all recipes of a specific search query and return as a JSON
+  // app.get("api/:query", function(req, res){
+  //   Recipe.findAll({
+  //     where: {
+  //       query: req.params.query
+  //     }}).then
+  //     });
+  //   });
+  
 };
