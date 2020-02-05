@@ -3,6 +3,10 @@ form.login {
     margin-top: 50px;
 }
 
+html{
+    height: 100%;
+}
+
 /* Navbar elements */
 nav {
     background-color: #222222;
@@ -21,6 +25,14 @@ nav {
     color: white;
 }
 
+.dropdown-item:hover{
+    background-color:#ff0101;
+}
+.dropdown-item:active{
+    background-color:#ff0101;
+}
+     
+
 .btn-danger{
     background-color:#ff0101;
 }
@@ -29,10 +41,11 @@ nav {
     background-color: rgb(17, 17, 17);
 }
 
-
 .food-input{
     border: black solid 1px;
 }
+
+
 
 /*  Homepage elements */
 #homepage-search {
@@ -47,6 +60,7 @@ nav {
 #search-page-logo-img{
     height: 90px;
     margin-bottom: 19px;
+   
 }
 
 #navbar-logo-img{
@@ -63,5 +77,20 @@ body {
     background-size: cover;
     background-position: 100%;
     background-repeat:   no-repeat;
-    /* background-position: center center;  */
+    background-position: center center; 
 }
+
+.background-tint {
+    background-color: rgba(0, 0, 0, 0.582); 
+    background-blend-mode: multiply;
+  }
+
+  .add-recipe-label {
+      color: white;
+      text-shadow: 3px 3px 3px black;
+  }
+
+  #add-recipe-title {
+      color: white;
+    margin-top: 30px;
+  }
