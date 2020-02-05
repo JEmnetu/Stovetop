@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Stovetop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/79b15de51a.js"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar justify-content-between">
+
+        <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user-circle"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">My Stovetop</a>
+                <a class="dropdown-item" href="#">Find Recipes</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+            </div>
+        </div>
+
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- start of main container -->
+    <div class="container" id="search-container">
+        <div class="row" id="search-row">
+            <div class="col-md-4 text-center">
+                <img src="images/transparent-logo.png" alt="stovetop logo" id="search-page-logo-img">
+                <form class="form food-search">
+                    <input class="form-control mr-sm-2 food-input" id="homepage-search" type="search"
+                        placeholder="Find Recipes" aria-label="Search">
+                    <button class="btn btn-danger my-2 my-sm-0" type="submit">Get Cookin'</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+</body>
+
+</html>

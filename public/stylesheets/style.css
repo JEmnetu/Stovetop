@@ -3,19 +3,65 @@ form.login {
     margin-top: 50px;
 }
 
-.navbar {
-    background-color: white;
+/* Navbar elements */
+nav {
+    background-color: #222222;
 }
 
-.food-search {
-    margin-top: 20em;
-    margin-left: 30em;
+.fa-user-circle:before{
+    font-size: 30px;
+    color: white;
 }
 
-.food-input {
-    border: solid 2px black;
+.fa-user-circle{
+    float: right;
+}
+
+#navbarDropdownMenuLink {
+    color: white;
+}
+
+.btn-danger{
+    background-color:#ff0101;
+}
+
+.btn-secondary.dropdown-toggle{
+    background-color: rgb(17, 17, 17);
+}
+
+
+.food-input{
+    border: black solid 1px;
+}
+
+/*  Homepage elements */
+#homepage-search {
+    margin: 20px 0 8px;
+}
+
+#search-row{
+    justify-content: center;
+    justify-items: center;
+}
+
+#search-page-logo-img{
+    height: 90px;
+    margin-bottom: 19px;
+}
+
+#navbar-logo-img{
+    height: 40px;
+}
+
+.col-md-4{
+    margin-top: 100px;
 }
 
 body {
-    background-color: rgb(248, 249, 250);
+    /* background: #d9d9d9; */
+    background-image: url("../images/assorted-salads-on-bowls-1640773.jpg");
+    background-size: cover;
+    background-position: 100%;
+    background-repeat:   no-repeat;
+    /* background-position: center center;  */
 }
