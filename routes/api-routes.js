@@ -33,6 +33,7 @@ module.exports = function(app) {
         res.redirect("/");
     });
 
+
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", function(req, res) {
         if (!req.user) {
@@ -51,6 +52,7 @@ module.exports = function(app) {
     app.get("/api/food_data", function(req, res) {
         db.Recipe.findAll({}).then((result) => {
             res.json(result);
+
         });
     });
 
@@ -64,3 +66,4 @@ module.exports = function(app) {
 
 
 };
+
