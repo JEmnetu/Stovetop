@@ -22,15 +22,29 @@
 </head>
 
 <body>
-    <!-- navbar -->
+    <!-- navbar  -->
     <nav class="navbar navbar-expand-lg">
+        <div class="d-flex">
+            <span class="w-100 d-lg-none d-block">
+                <img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
+            <a class="navbar-brand d-none d-lg-inline-block" href="./index.html"><img
+                    src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <form class="form-inline food-search" id="nav-searchbar">
+                <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes"
+                    aria-label="Search">
+                <button class="btn btn-danger my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
         <div class="dropdown show">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user-circle"></i>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="./mystovetop.html">My Stovetop</a>
+                <a class="dropdown-item" href="#">My Stovetop</a>
                 <a class="dropdown-item" href="./index.html">Find Recipes</a>
                 <a class="dropdown-item" href="./add_recipe.html">Add Recipes</a>
                 <div class="dropdown-divider"></div>
@@ -40,18 +54,11 @@
     </nav>
     <!-- end of navbar -->
 
-    <!-- start of main container -->
-    <div class="container" id="search-container">
-        <div class="row" id="search-row">
-            <div class="col-md-4 text-center">
-                <img src="images/transparent-logo.png" alt="stovetop logo" id="search-page-logo-img">
-                <form class="form food-search">
-                    <input class="form-control mr-sm-2 food-input" id="homepage-search" type="search"
-                        placeholder="Find Recipes" aria-label="Search">
-                    <button class="btn btn-danger my-2 my-sm-0" type="submit">Get Cookin'</button>
-                </form>
-            </div>
-        </div>
+
+    <div class="container">
+
+        <!-- main container of page will go here -->
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
