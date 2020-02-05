@@ -1,1 +1,3 @@
-INSERT INTO Recipes (recipe_name, ingredients, cook_time, public, flames, direction,createdAt, updatedAt) values ('pasta', 'grain', 20, 1, 0, 'cook this', '2020-02-02', '2020-02-02');
+INSERT INTO Recipes (recipe_name, cuisine, ingredients, cook_time, public, flames, direction,createdAt, updatedAt) values ('pasta', "italian" 'grain', 20, 1, 0, 'cook this', '2020-02-02', '2020-02-02');
+INSERT INTO Recipes (recipe_name, cuisine, ingredients, cook_time, public, flames, direction,createdAt, updatedAt) values ('Chocolate Chip Cookies', "american", 'flour, eggs, sugar', 45, 1, 0, 'Mix eggs and flour together. Put sugar in a bowl.', '2020-05-02', '2020-05-02');
+INSERT INTO Recipes (recipe_name, cuisine, ingredients, cook_time, public, flames, direction,createdAt, updatedAt) values ('Chocolate Chip Cookies', 'flour, eggs, sugar', 45, 1, 0, 'Mix eggs and flour together. Put sugar in a bowl.', '2020-05-02', '2020-05-02');

@@ -7,6 +7,9 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
+        cuisine: {
+            type: DataTypes.STRING
+        },
         ingredients: {
             type: DataTypes.TEXT
         },
@@ -17,7 +20,6 @@ module.exports = function(sequelize, DataTypes) {
         public: {
             type: DataTypes.BOOLEAN,
             defaultValue: true,
-
         },
         flames: {
             type: DataTypes.INTEGER,
