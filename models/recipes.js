@@ -20,7 +20,8 @@ module.exports = function(sequelize, DataTypes) {
 
         },
         flames: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: "0"
         },
         direction: {
             type: DataTypes.TEXT,
