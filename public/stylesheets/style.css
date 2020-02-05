@@ -27,10 +27,11 @@ nav {
 
 .dropdown-item:hover{
     background-color:#ff0101;
+    color: white;
 }
-.dropdown-item:active{
+/* .dropdown-item:active{
     background-color:#ff0101;
-}
+} */
      
 
 .btn-danger{
@@ -41,8 +42,15 @@ nav {
     background-color: rgb(17, 17, 17);
 }
 
-.food-input{
+.food-input {
     border: black solid 1px;
+}
+
+.food-input:focus{
+    box-shadow: #ff0101;
+}
+.food-input:active{
+    box-shadow: #ff0101;
 }
 
 
@@ -59,8 +67,11 @@ nav {
 
 #search-page-logo-img{
     height: 90px;
-    margin-bottom: 19px;
-   
+
+}
+
+#slogan{
+    margin-bottom: 40px;
 }
 
 #navbar-logo-img{
@@ -72,9 +83,12 @@ nav {
 }
 
 body {
-    /* background: #d9d9d9; */
+    width: -webkit-fill-available;
     background-image: url("../images/assorted-salads-on-bowls-1640773.jpg");
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-position: 100%;
     background-repeat:   no-repeat;
     background-position: center center; 
@@ -84,6 +98,11 @@ body {
     background-color: rgba(0, 0, 0, 0.582); 
     background-blend-mode: multiply;
   }
+
+  /* .background-tint-white {
+    background-color: rgba(255, 255, 255, 0.664); 
+    background-blend-mode: multiply;
+  } */
 
   .add-recipe-label {
       color: white;
@@ -95,4 +114,6 @@ body {
     margin-top: 30px;
   }
 
-  
+  .login, .login-form-text {
+      color: white;
+  }
