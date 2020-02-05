@@ -21,7 +21,8 @@ module.exports = function(sequelize, DataTypes) {
         },
         flames: {
             type: DataTypes.INTEGER,
-            defaultValue: "0"
+            defaultValue: "0",
+            allowNull: false
         },
         direction: {
             type: DataTypes.TEXT,

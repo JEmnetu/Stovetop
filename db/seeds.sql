@@ -1,0 +1,1 @@
+INSERT INTO Recipes (recipe_name, ingredients, cook_time, public, flames, direction,createdAt, updatedAt) values ('pasta', 'grain', 20, 1, 0, 'cook this', '2020-02-02', '2020-02-02');
