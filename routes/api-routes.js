@@ -51,6 +51,16 @@ module.exports = function(app) {
     app.get("/api/food_data", function(req, res) {
         db.Recipe.findAll({}).then((result) => {
             res.json(result);
-        })
-    })
+        });
+    });
+
+    app.post("/api/recipes", function(req, res) {
+        console.log(req.body);
+        db.Recipe.create(req.body).then((result) => {
+          res.json(result);
+
+        });
+    });
+
+
 };
