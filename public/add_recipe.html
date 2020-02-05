@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Stovetop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/79b15de51a.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="background-tint">
+    <!-- navbar  -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block">
+                <img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
+            <a class="navbar-brand d-none d-lg-inline-block" href="./index.html"><img
+                    src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></a>
+        </div>
+
+        <div class="collapse navbar-collapse flex-grow-1 text-right">
+            <form class="form-inline food-search" id="nav-searchbar">
+                <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes"
+                    aria-label="Search">
+                <button class="btn btn-danger my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">My Stovetop</a>
+                    <a class="dropdown-item" href="#">Find Recipes</a>
+                    <a class="dropdown-item" href="#">Add Recipes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+
+
+    <div class="container">
+        <h1 id="add-recipe-title">Add a Recipe</h1>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="add-recipe-label" for="recipe_name">Recipe Name</label>
+                    <input type="text" class="form-control" id="recipe_name" placeholder="Abuela's Fresh Tortillas">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="add-recipe-label" for="cuisine">Cuisine</label>
+                    <select class="form-control" id="cuisine">
+                        <option>American</option>
+                        <option>African</option>
+                        <option>Cajun</option>
+                        <option>Chinese</option>
+                        <option>Ethiopian</option>
+                        <option>French</option>
+                        <option>German</option>
+                        <option>Greek</option>
+                        <option>Indian</option>
+                        <option>Italian</option>
+                        <option>Jamaican</option>
+                        <option>Japanese</option>
+                        <option>Jewish</option>
+                        <option>Korean</option>
+                        <option>Latin</option>
+                        <option>Mediterranean</option>
+                        <option>Mexican</option>
+                        <option>Middle Eastern</option>
+                        <option>Vietnamese</option>
+                        <option>Thai</option>
+                        <option>Turkish</option>
+                        <option>Spanish</option>
+                        <option>Russian</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="add-recipe-label" for="ingredients">Ingredients List</label>
+                <textarea class="form-control" id="ingredients" rows="3"
+                    placeholder="Flour, corn, salt, water..."></textarea>
+            </div>
+            <div class="form-group">
+                <label class="add-recipe-label" for="ingredients">Full Recipe</label>
+                <textarea class="form-control" id="ingredients" rows="3"
+                    placeholder="1. Preheat oven to 400°..."></textarea>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="public-or-private" id="public-recipe" value="public"
+                    checked>
+                <label class="form-check-label add-recipe-label" for="public-recipe">
+                    Public
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="public-or-private" id="private-recipe"
+                    value="private">
+                <label class="form-check-label add-recipe-label" for="private-recipe">
+                    Private
+                </label>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-danger">Add to Stovetop</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+</body>
+
+</html>
