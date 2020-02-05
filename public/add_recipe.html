@@ -24,31 +24,31 @@
 <body class="background-tint">
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg">
-        <div class="d-flex flex-grow-1">
+        <div class="d-flex">
             <span class="w-100 d-lg-none d-block">
                 <img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
             <a class="navbar-brand d-none d-lg-inline-block" href="./index.html"><img
                     src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></a>
         </div>
 
-        <div class="collapse navbar-collapse flex-grow-1 text-right">
+        <div class="collapse navbar-collapse">
             <form class="form-inline food-search" id="nav-searchbar">
                 <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes"
                     aria-label="Search">
                 <button class="btn btn-danger my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user-circle"></i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">My Stovetop</a>
-                    <a class="dropdown-item" href="#">Find Recipes</a>
-                    <a class="dropdown-item" href="#">Add Recipes</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Logout</a>
-                </div>
+        </div>
+        <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user-circle"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="./mystovetop.html">My Stovetop</a>
+                <a class="dropdown-item" href="./index.html">Find Recipes</a>
+                <a class="dropdown-item" href="#">Add Recipes</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><strong>Logout</strong></a>
             </div>
         </div>
     </nav>
