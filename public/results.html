@@ -6,19 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to Stovetop</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="stylesheets/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/79b15de51a.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -27,20 +20,17 @@
         <div class="d-flex">
             <span class="w-100 d-lg-none d-block">
                 <img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
-            <a class="navbar-brand d-none d-lg-inline-block" href="./index.html"><img
-                    src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></a>
+            <a class="navbar-brand d-none d-lg-inline-block" href="./index.html"><img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></a>
         </div>
 
         <div class="collapse navbar-collapse">
             <form class="form-inline food-search" id="nav-searchbar">
-                <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes"
-                    aria-label="Search">
+                <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes" aria-label="Search">
                 <button class="btn btn-danger my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
         <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user-circle"></i>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -63,6 +53,23 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
+    <script>
+        $(() => {
+
+            var recipeDiv = $(".container");
+
+            $.get('/api/food_data', (data) => {
+                rinfo = $(`<h2>Recipe Title: ${data[0].recipe_name}</h2>
+                            <h2>Cook Time: ${data[0].cook_time} </h2><br>
+                            <h4>Instructions: ${data[0].direction}</h4>`);
+                // rinfo.text();
+                recipeDiv.append(rinfo);
+                console.log(data);
+
+            })
+
+        })
+    </script>
 </body>
 
 </html>
