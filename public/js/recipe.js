@@ -27,7 +27,7 @@ $("#search-btn").on("click", function(){
     $.ajax({
         url: "/api/food_data/search", 
         method: "POST",
-        data: searchResults
+        data: {keywords: keywords}
     }).then(function(){
         location.href = "/results";
     });
