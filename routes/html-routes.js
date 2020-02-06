@@ -9,10 +9,19 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
         // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect("/home.html");
+        }
+        res.sendFile(path.join(__dirname, "../public/signup.html"));
+
+    });
+
+    app.get("/home", function(req, res) {
+        // If the user already has an account send them to the members page
         // if (req.user) {
         //   res.redirect("/members");
         // }
-        res.sendFile(path.join(__dirname, "../public/index.html"));
+        res.sendFile(path.join(__dirname, "../public/home.html"));
 
     });
 
@@ -49,9 +58,9 @@ module.exports = function(app) {
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
-    app.get("/members", function(req, res) {
-        // res.sendFile(path.join(__dirname, "../public/members.html"));
-        res.render("members");
-    });
+    // app.get("/members", function(req, res) {
+    //     // res.sendFile(path.join(__dirname, "../public/members.html"));
+    //     res.render("members");
+    // });
 
 };

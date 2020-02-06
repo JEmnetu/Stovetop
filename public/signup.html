@@ -30,7 +30,7 @@ to test out how it would look in the handlebars template.  -->
             <div class="col-md-4 text-center">
                 <img src="images/transparent-logo-white.png" alt="stovetop logo" id="search-page-logo-img">
 
-                <form class="login">
+                <form class="signup">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="email-input" placeholder="Email">
@@ -39,10 +39,14 @@ to test out how it would look in the handlebars template.  -->
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="password-input" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-danger">Login</button>
+                    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> <span class="msg"></span>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Sign Up</button>
                 </form>
                 <br />
-                <p class="login-form-text">Or sign up <a href="./signup.html">here</a></p>
+                <p class="login-form-text">Or log in <a href="/login.html">here</a></p>
 
 
             </div>
@@ -50,8 +54,7 @@ to test out how it would look in the handlebars template.  -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/login.js"></script>
-
+    <script type="text/javascript" src="js/signup.js"></script>
 </body>
 
 </html>

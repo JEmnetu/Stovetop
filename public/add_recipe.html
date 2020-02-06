@@ -6,19 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to Stovetop</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="stylesheets/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/79b15de51a.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body class="background-tint">
@@ -27,28 +20,25 @@
         <div class="d-flex">
             <span class="w-100 d-lg-none d-block">
                 <img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
-            <a class="navbar-brand d-none d-lg-inline-block" href="./index.html"><img
-                    src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></a>
+            <a class="navbar-brand d-none d-lg-inline-block" href="./home.html"><img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></a>
         </div>
 
         <div class="collapse navbar-collapse">
             <form class="form-inline food-search" id="nav-searchbar">
-                <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes"
-                    aria-label="Search">
+                <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes" aria-label="Search">
                 <button class="btn btn-danger my-2 my-sm-0" type="button" id="search-btn"><i class="fa fa-search"></i></button>
             </form>
         </div>
         <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user-circle"></i>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="./mystovetop.html">My Stovetop</a>
-                <a class="dropdown-item" href="./index.html">Find Recipes</a>
+                <a class="dropdown-item" href="./home.html">Find Recipes</a>
                 <a class="dropdown-item" href="#">Add Recipes</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><strong>Logout</strong></a>
+                <a class="dropdown-item" href="/logout"><strong>Logout</strong></a>
             </div>
         </div>
     </nav>
@@ -94,8 +84,7 @@
         </div>
         <div class="form-group">
             <label class="add-recipe-label" for="ingredients">Ingredients List</label>
-            <textarea class="form-control" id="ingredients" rows="1"
-                placeholder="Flour, corn, salt, water..."></textarea>
+            <textarea class="form-control" id="ingredients" rows="1" placeholder="Flour, corn, salt, water..."></textarea>
         </div>
         <div class="form-group">
             <label class="add-recipe-label" for="direction">Full Recipe</label>
@@ -108,21 +97,19 @@
             </div>
             <div class="form-group col-md-6">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="public-or-private" id="public-recipe"
-                        value="public" checked>
+                    <input class="form-check-input" type="radio" name="public-or-private" id="public-recipe" value="public" checked>
                     <label class="form-check-label add-recipe-label" for="public-recipe">
                         Public
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="public-or-private" id="private-recipe"
-                        value="private">
+                    <input class="form-check-input" type="radio" name="public-or-private" id="private-recipe" value="private">
                     <label class="form-check-label add-recipe-label" for="private-recipe">
                         Private
                     </label>
                 </div>
             </div>
-            
+
         </div>
         <br>
         <div class="form-group row">
