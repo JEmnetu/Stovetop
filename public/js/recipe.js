@@ -1,4 +1,3 @@
-
 $("#add-recipe-btn").on("click", function(){
     var public = 1;
     if ($("#private-recipe").val() === "private") {
@@ -21,4 +20,16 @@ $("#add-recipe-btn").on("click", function(){
     }).then(function(){
         location.href = "/mystovetop";
     });
+});
+
+//search button
+$("#search-btn").on("click", function(){
+    $.ajax({
+        url: "/api/food_data/search", 
+        method: "POST",
+        data: searchResults
+    }).then(function(){
+        location.href = "/results";
+    });
+
 });
