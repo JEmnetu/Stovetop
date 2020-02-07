@@ -24,13 +24,7 @@ $("#add-recipe-btn").on("click", function() {
 
 //search button
 $("#search-btn").on("click", function() {
-    $.ajax({
-        url: "/api/food_data/search",
-        method: "POST",
-        data: 'Results'
-    }).then(function(res) {
-        location.href = "/results";
-        console.log(res);
-    });
-
+    let searchQuery = $("#search-query").val();
+    location.href = "/results?keywords=" + encodeURIComponent(searchQuery);
+    
 });

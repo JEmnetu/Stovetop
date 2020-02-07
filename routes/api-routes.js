@@ -1,25 +1,10 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
-const Sequelize = require("sequelize");
-const Op = Sequelize.Op
 var passport = require("../config/passport");
 
 module.exports = function(app) {
 
-    //helper function for search 
-    var formatSearch = function(keywords) {
-        let searchTerms = []
 
-        keywords.split(' ').forEach(keyword => {
-            searchTerms.push({
-                [Op.like]: '%' + keyword + '%'
-            })
-        });
-
-        return {
-            [Op.or]: searchTerms
-        };
-    }
 
     // Using the passport.authenticate middleware with our local strategy.
     // If the user has valid login credentials, send them to the members page.
@@ -49,6 +34,25 @@ module.exports = function(app) {
         req.logout();
         res.redirect("/login");
     });
+
+
+    // Route for getting some data about our user to be used client side
+    app.get("/api/user_data", function(req, res) {
+        if (!req.user) {
+            // The user is not logged in, send back an empty object
+            res.json({});
+        } else {
+            // Otherwise send back the user's email and id
+            // Sending back a password, even a hashed password, isn't a good idea
+            res.json({
+                email: req.user.email,
+                id: req.user.id
+            });
+        }
+    });
+
+
+
 
     app.get("/api/food_data", (req, res) => {
         db.Recipe.findAll({})

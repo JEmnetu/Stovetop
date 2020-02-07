@@ -1,13 +1,14 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
 var db = require("../models");
-
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-    app.get("/", function(req, res) {
+    app.get("/", function (req, res) {
         // If the user already has an account send them to the members page
         if (req.user) {
             res.redirect("/home.html");
@@ -16,7 +17,7 @@ module.exports = function(app) {
 
     });
 
-    app.get("/home", function(req, res) {
+    app.get("/home", function (req, res) {
         // If the user already has an account send them to the members page
         // if (req.user) {
         //   res.redirect("/members");
@@ -25,7 +26,7 @@ module.exports = function(app) {
 
     });
 
-    app.get("/myStoveTop", function(req, res) {
+    app.get("/myStoveTop", function (req, res) {
         // If the user already has an account send them to the members page
         // if (req.user) {
         //   res.redirect("/members");
@@ -34,20 +35,42 @@ module.exports = function(app) {
 
     });
 
-    app.get("/results", function(req, res) {
+    app.get("/results", function (req, res) {
         // If the user already has an account send them to the members page
         // if (req.user) {
         //   res.redirect("/members");
         // }
-        // db.Recipe.findAll({}).then((result) => {
-        //     console.log(result);
-        // });
+        var formatSearch = function (keywords) {
+            let searchTerms = []
 
-        res.sendFile(path.join(__dirname, "../public/results.html"));
+            keywords.split(' ').forEach(keyword => {
+                searchTerms.push({ [Op.like]: '%' + keyword + '%' })
+            });
 
+            return {
+                [Op.or]: searchTerms
+            };
+        }
+        console.log(req.query);
+        const decodedKeywords = decodeURIComponent(req.query.keywords);
+        const searchArray = formatSearch(decodedKeywords);
+        db.Recipe.findAll({
+            where: {
+                [Op.or]: {
+                    ingredients: searchArray,
+                    cuisine: searchArray,
+                    direction: searchArray,
+                    recipe_name: searchArray
+                }
+            },
+        }).then((result) => {
+            console.log(result);
+        
+            res.render("results", {recipes: result});
+        });
     });
 
-    app.get("/login", function(req, res) {
+    app.get("/login", function (req, res) {
         // If the user already has an account send them to the members page
         if (req.user) {
             res.redirect("/home.html");
