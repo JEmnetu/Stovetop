@@ -11,10 +11,9 @@ module.exports = function (app) {
     app.get("/", function (req, res) {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/home.html");
+            res.redirect("/home");
         }
-        res.sendFile(path.join(__dirname, "../public/signup.html"));
-
+        res.render("signup");
     });
 
     app.get("/home", function (req, res) {
@@ -22,31 +21,38 @@ module.exports = function (app) {
         // if (req.user) {
         //   res.redirect("/members");
         // }
-        res.sendFile(path.join(__dirname, "../public/home.html"));
+        res.render("home");
+
+    });
+
+    app.get("/addrecipe", function (req, res) {
+        // If the user already has an account send them to the members page
+        // if (req.user) {
+        //   res.redirect("/members");
+        // }
+        res.render("add_recipe");
 
     });
 
     app.get("/myStoveTop", function (req, res) {
-        // If the user already has an account send them to the members page
-        // if (req.user) {
-        //   res.redirect("/members");
+        // If the user  isnt logged in send them to the login page
+        // if (req.user === null) {
+        //   res.redirect("/login");
         // }
-        res.sendFile(path.join(__dirname, "../public/mystovetop.html"));
+        res.render("members");
+        // res.sendFile(path.join(__dirname, "../public/mystovetop.html"));
 
     });
 
+
+    //get and render search results
     app.get("/results", function (req, res) {
-        // If the user already has an account send them to the members page
-        // if (req.user) {
-        //   res.redirect("/members");
-        // }
         var formatSearch = function (keywords) {
             let searchTerms = []
 
             keywords.split(' ').forEach(keyword => {
                 searchTerms.push({ [Op.like]: '%' + keyword + '%' })
             });
-
             return {
                 [Op.or]: searchTerms
             };
@@ -64,19 +70,17 @@ module.exports = function (app) {
                 }
             },
         }).then((result) => {
-            console.log(result);
-        
-            res.render("results", {recipes: result});
+            res.render("results", { recipes: result });
         });
     });
 
+    
     app.get("/login", function (req, res) {
         // If the user already has an account send them to the members page
         // if (req.user) {
         //     res.redirect("/members");
         // }
-        res.sendFile(path.join(__dirname, "../public/login.html"));
-        // res.render("login")
+        res.render("login")
     });
 
     // Here we've add our isAuthenticated middleware to this route.

@@ -114,6 +114,6 @@ body {
     margin-top: 30px;
   }
 
-  .login, .login-form-text {
+  .login, .login-form-text, .signup {
       color: white;
   }
