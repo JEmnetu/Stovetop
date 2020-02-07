@@ -117,3 +117,33 @@ body {
   .login, .login-form-text, .signup {
       color: white;
   }
+
+  .view-recipe-link{
+      background-color: #ff0101;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+  }
+
+  .view-recipe-link:hover{
+      color: white;
+      background-color: #d30000;
+  }
+
+  .results-card{
+      background-color: rgba(0, 0, 0, 0.699);
+      color: white;
+      margin: 20px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.377);
+      float: left;
+  }
+
+  .flame-img{
+      float: right;
+  }
+
+  .cuisine-card-text{
+      color: rgb(192, 192, 192) !important;
+  }
