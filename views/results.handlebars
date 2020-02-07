@@ -3,14 +3,15 @@
     <div class="d-flex">
         <span class="w-100 d-lg-none d-block">
             <img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
-        <a class="navbar-brand d-none d-lg-inline-block" href="./home.html"><img src="images/transparent-logo-white.png"
+        <a class="navbar-brand d-none d-lg-inline-block" href="/home"><img src="images/transparent-logo-white.png"
                 alt="stovetop logo" id="navbar-logo-img"></a>
     </div>
 
     <div class="collapse navbar-collapse">
         <form class="form-inline food-search" id="nav-searchbar">
-            <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes" aria-label="Search">
-            <button class="btn btn-danger my-2 my-sm-0" type="button"><i class="fa fa-search"></i></button>
+            <input class="form-control mr-sm-2 food-input" type="search" id="search-query" placeholder="Find Recipes"
+                aria-label="Search">
+            <button class="btn btn-danger my-2 my-sm-0" type="button" id="search-btn"><i class="fa fa-search"></i></button>
         </form>
     </div>
     <div class="dropdown show">
@@ -19,9 +20,9 @@
             <i class="fa fa-user-circle"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="./mystovetop.html">My Stovetop</a>
-            <a class="dropdown-item" href="./home.html">Find Recipes</a>
-            <a class="dropdown-item" href="./add_recipe.html">Add Recipes</a>
+            <a class="dropdown-item" href="/mystovetop">My Stovetop</a>
+            <a class="dropdown-item" href="/home">Find Recipes</a>
+            <a class="dropdown-item" href="/addrecipe">Add Recipes</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout"><strong>Logout</strong></a>
         </div>
@@ -29,16 +30,17 @@
 </nav>
 <!-- end of navbar -->
 
-
 <div class="container">
-    <ul>
-        {{ recipes }}
-        {{#each recipes}}
-        <li>{{ingredients}}</li>
-        
-        {{/each}}
-    </ul>
+    {{#each recipes}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ recipe_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"> {{cuisine}}</h6>
+            <p class="card-text">{{ingredients}}</p>
+            <a href="#" class="card-link">Link</a>
+            <a href="#" class="card-link"><img src="../public/images/flame.png"></a>
+        </div>
+    </div>
+    {{/each}}
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/members.js"></script>
