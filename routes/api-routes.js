@@ -1,23 +1,10 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
-const Sequelize = require("sequelize");
-const Op = Sequelize.Op
 var passport = require("../config/passport");
 
 module.exports = function (app) {
 
-  //helper function for search 
-  var formatSearch = function(keywords) {
-    let searchTerms = []
-
-    keywords.split(' ').forEach(keyword => {
-      searchTerms.push({[Op.like]: '%' + keyword + '%'})
-    });
-
-    return {
-      [Op.or]: searchTerms
-    };
-  }
+  
   
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -64,21 +51,8 @@ module.exports = function (app) {
     }
   });
 
-  app.post("/api/food_data/search", function (req, res) {
-     const searchArray = formatSearch(req.body.keywords);
-    db.Recipe.findAll({
-      where: {[Op.or]: {
-        ingredients: searchArray,
-        cuisine: searchArray,
-        direction: searchArray,
-        recipe_name: searchArray
-      }
-      },
-    }).then((result) => {
-      res.json(result);
+  
 
-    });
-  });
 
   
 

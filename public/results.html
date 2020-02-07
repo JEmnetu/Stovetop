@@ -25,7 +25,7 @@
 
         <div class="collapse navbar-collapse">
             <form class="form-inline food-search" id="nav-searchbar">
-                <input class="form-control mr-sm-2 food-input" type="search" placeholder="Find Recipes" aria-label="Search">
+                <input class="form-control mr-sm-2 food-input" type="search" id="search-query" placeholder="Find Recipes" aria-label="Search">
                 <button class="btn btn-danger my-2 my-sm-0" type="button"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -53,23 +53,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
-    <script>
-        $(() => {
 
-            var recipeDiv = $(".container");
-
-            $.get('/api/food_data', (data) => {
-                rinfo = $(`<h2>Recipe Title: ${data[0].recipe_name}</h2>
-                            <h2>Cook Time: ${data[0].cook_time} </h2><br>
-                            <h4>Instructions: ${data[0].direction}</h4>`);
-                // rinfo.text();
-                recipeDiv.append(rinfo);
-                console.log(data);
-
-            })
-
-        })
-    </script>
 </body>
 
 </html>
