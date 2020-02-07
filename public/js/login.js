@@ -4,7 +4,7 @@ $(document).ready(function() {
     var loginForm = $("form.login");
     var emailInput = $("input#email-input");
     var passwordInput = $("input#password-input");
-    var sweetBtn = $("sweet");
+    var sweetBtn = $(".sweet");
 
     // When the form is submitted, we validate there's an email and password entered
     loginForm.on("submit", function(event) {
@@ -31,6 +31,11 @@ $(document).ready(function() {
                 password: password
             })
             .then(function() {
+                swal("Stovetop", "hello world");
+
+
+            })
+            .then(function() {
                 window.location.replace("/home.html");
                 // If there's an error, log the error
             })
@@ -39,7 +44,19 @@ $(document).ready(function() {
             });
     }
     sweetBtn.on('click', () => {
-        alert("hello world")
+
     });
+
+    // swal({
+    //   title: "Are you sure?",
+    //   text: "Are you sure that you want to leave this page?",
+    //   icon: "warning",
+    //   dangerMode: true,
+    // })
+    // .then(willDelete => {
+    //   if (willDelete) {
+    //     swal("Deleted!", "Your imaginary file has been deleted!", "success");
+    //   }
+    // });
 
 });
