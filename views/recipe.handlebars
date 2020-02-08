@@ -2,8 +2,8 @@
 <nav class="navbar navbar-expand-lg">
     <div class="d-flex">
         <span class="w-100 d-lg-none d-block">
-            <img src="images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
-        <a class="navbar-brand d-none d-lg-inline-block" href="/home"><img src="images/transparent-logo-white.png"
+            <img src="/images/transparent-logo-white.png" alt="stovetop logo" id="navbar-logo-img"></span>
+        <a class="navbar-brand d-none d-lg-inline-block" href="/home"><img src="/images/transparent-logo-white.png"
                 alt="stovetop logo" id="navbar-logo-img"></a>
     </div>
 
@@ -30,22 +30,23 @@
     </div>
 </nav>
 <!-- end of navbar -->
-
-<div class="container results-container">
+<div class="container recipe-container">
     <div class="results-header">
-        <h1 class="results-head-text">Bon Appétit!</h1>
-    </div>
-    <div class="card-container">
-        {{#each recipes}}
-        <div class="card results-card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{ recipe_name }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted cuisine-card-text"> {{cuisine}}</h6>
-                <p class="card-text"><strong>Cook Time:</strong> {{cook_time}} Minutes</p>
-                <a href="/recipe/{{id}}" class="card-link view-recipe-link">View Recipe</a>
-                <button class="flame-img">{{flames}} <img src="/images/flame.png"></button>
-            </div>
+        <h3>{{recipeId.recipe_name}}</h3>
+        <button class="flame-img-recipe-page">{{recipeId.flames}} <img src="/images/flame.png"></button>
+        <div>
+            <p><strong>Cook Time:</strong> {{recipeId.cook_time}} Minutes <br><strong>Cuisine:</strong> {{recipeId.cuisine}} </p>
+            
         </div>
-        {{/each}}
+        <div>
+            <p><strong>Ingredients: </strong>{{recipeId.ingredients}} <br><strong>Cooking Instructions:</strong> {{recipeId.direction}} </p>
+            
+            
+        </div>
+        <br>
+        <form>
+            <input class="btn btn-danger" type="button" value="Back To Results" onclick="history.back()">
+        </form>
     </div>
+
 </div>
