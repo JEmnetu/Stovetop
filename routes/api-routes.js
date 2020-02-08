@@ -64,6 +64,13 @@ module.exports = function (app) {
     }
   });
 
+  app.get("/api/food_data", (req, res) => {
+    db.Recipe.findAll({})
+        .then((data) => {
+            res.json(data);
+        })
+})
+
   app.post("/api/food_data/search", function (req, res) {
      const searchArray = formatSearch(req.body.keywords);
     db.Recipe.findAll({
@@ -90,7 +97,20 @@ module.exports = function (app) {
 
     });
   });
-
+//update the number of flames
+  app.patch("/api/recipes/:id", function (req, res){
+    db.Recipe.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(recipe => {
+      if(req.body.flame === true) {
+        recipe.increment('flames')
+      } else if (req.body.flame === false) {
+        recipe.decrement('flames')
+      }
+    })
+  })
 
 };
 
