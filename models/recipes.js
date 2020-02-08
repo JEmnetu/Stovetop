@@ -28,9 +28,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         direction: {
             type: DataTypes.TEXT,
-
         }
-
 
     });
     return Recipe;
