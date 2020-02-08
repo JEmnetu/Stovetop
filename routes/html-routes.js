@@ -3,20 +3,47 @@ var path = require("path");
 var db = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op
-// Requiring our custom middleware for checking if a user is logged in
+    // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var destroySessions = require("../config/middleware/destroySession");
 
-module.exports = function (app) {
+module.exports = function(app) {
 
-    app.get("/", function (req, res) {
+    // app.get("/", function(req, res) {
+    //     if (req.user) {
+    //         console.log("success");
+    //     } else {
+    //         console.log('nope');
+    //     }
+    // })
+
+    app.get("/signup", function(req, res) {
         // If the user already has an account send them to the members page
-        if (req.user) {
-            res.redirect("/home");
-        }
+
+        // if (req.user) {
+        //     res.redirect("/home");
+        // }
         res.render("signup");
     });
 
-    app.get("/home", function (req, res) {
+    app.get("/login", function(req, res) {
+        // If the user already has an account send them to the members page
+        // if (req.user) {
+        //     res.redirect("/members"); 
+        // }
+        res.render("login")
+    });
+
+    app.get("/", function(req, res) {
+        // If the user already has an account send them to the members page
+
+        // if (req.user) {
+        //     res.redirect("/home");
+        // }
+        // res.render("signup");
+    });
+
+    app.get("/home", (req, res) => {
         // If the user already has an account send them to the members page
         // if (req.user) {
         //   res.redirect("/members");
@@ -25,7 +52,7 @@ module.exports = function (app) {
 
     });
 
-    app.get("/addrecipe", function (req, res) {
+    app.get("/addrecipe", function(req, res) {
         // If the user already has an account send them to the members page
         // if (req.user) {
         //   res.redirect("/members");
@@ -34,7 +61,7 @@ module.exports = function (app) {
 
     });
 
-    app.get("/myStoveTop", function (req, res) {
+    app.get("/myStoveTop", function(req, res) {
         // If the user  isnt logged in send them to the login page
         // if (req.user === null) {
         //   res.redirect("/login");
@@ -46,12 +73,14 @@ module.exports = function (app) {
 
 
     //get and render search results
-    app.get("/results", function (req, res) {
-        var formatSearch = function (keywords) {
+    app.get("/results", function(req, res) {
+        var formatSearch = function(keywords) {
             let searchTerms = []
 
             keywords.split(' ').forEach(keyword => {
-                searchTerms.push({ [Op.like]: '%' + keyword + '%' })
+                searchTerms.push({
+                    [Op.like]: '%' + keyword + '%'
+                })
             });
             return {
                 [Op.or]: searchTerms
@@ -75,13 +104,7 @@ module.exports = function (app) {
     });
 
 
-    app.get("/login", function (req, res) {
-        // If the user already has an account send them to the members page
-        if (req.user) {
-            res.redirect("/members");
-        }
-        res.render("login")
-    });
+
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page

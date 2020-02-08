@@ -2,7 +2,7 @@ require("dotenv").config();
 module.exports = {
     "development": {
         "username": process.env.DBUSER || "root",
-        "password": process.env.PASSWORD || "yourRootPassword",
+        "password": process.env.PASSWORD || null,
         "database": process.env.DATABASE || "stovetop_db",
         "host": process.env.HOST || "127.0.0.1",
         "dialect": "mysql"
@@ -16,7 +16,7 @@ module.exports = {
     },
     "production": {
         "username": process.env.DBUSER || "root",
-        "password": process.env.PASSWORD || "yourRootPassword",
+        "password": process.env.PASSWORD || null,
         "database": process.env.DATABASE || "stovetop_db",
         "host": process.env.HOST || "127.0.0.1",
         "dialect": "mysql",

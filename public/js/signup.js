@@ -29,14 +29,15 @@ $(document).ready(function() {
                 password: password
             })
             .then(function(data) {
-                window.location.replace("/home.html");
+                window.location.replace("/home");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch(handleLoginErr);
     }
 
     function handleLoginErr(err) {
-        $("#alert .msg").text(err.responseJSON);
-        $("#alert").fadeIn(500);
+        alert("error!");
+        // $("#alert .msg").text(err.responseJSON);
+        // $("#alert").fadeIn(500);
     }
 });

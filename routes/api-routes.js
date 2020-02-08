@@ -22,12 +22,21 @@ module.exports = function(app) {
                 password: req.body.password
             })
             .then(function() {
+                console.log("Account created!");
                 res.redirect(307, "/api/login");
             })
             .catch(function(err) {
                 res.status(401).json(err);
             });
     });
+    // app.post('/register', (req, res) => {
+    //     var email = req.body.email;
+    //     var password = req.body.password
+
+    //     console.log(email);
+
+    // })
+
 
     // Route for logging user out
     app.get("/logout", function(req, res) {
