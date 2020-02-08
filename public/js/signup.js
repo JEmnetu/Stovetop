@@ -4,6 +4,8 @@ $(document).ready(function() {
     var emailInput = $("input#email-input");
     var passwordInput = $("input#password-input");
 
+    swal("Welcome to Stovetop!", "Lets get cooking!");
+
     // When the signup button is clicked, we validate the email and password are not blank
     signUpForm.on("submit", function(event) {
         event.preventDefault();

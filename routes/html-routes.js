@@ -76,7 +76,6 @@ module.exports = function(app) {
     app.get("/results", function(req, res) {
         var formatSearch = function(keywords) {
             let searchTerms = []
-
             keywords.split(' ').forEach(keyword => {
                 searchTerms.push({
                     [Op.like]: '%' + keyword + '%'
@@ -106,11 +105,25 @@ module.exports = function(app) {
 
 
 
+    app.get("/recipe/:id", function (req, res) {
+        // If the user already has an account send them to the members page
+        // if (req.user) {
+        //     res.redirect("/members");
+        // }
+        db.Recipe.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then((data) => {
+            res.render("recipe", { recipeId: data });
+        });
+
+    });
+
+
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     // app.get("/members", function(req, res) {
     //     // res.sendFile(path.join(__dirname, "../public/members.html"));
     //     res.render("members");
-    // });
-
 };

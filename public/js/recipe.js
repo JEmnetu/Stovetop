@@ -14,7 +14,7 @@ $("#add-recipe-btn").on("click", function() {
         flames: 0,
         direction: $("#direction").val().trim()
     };
-    if (!newRecipe) {
+    if (newRecipe) {
         alert("error");
     }
     $.ajax({
