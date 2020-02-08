@@ -1,5 +1,3 @@
-//  import { spawn } from "child_process";
-
 $("#add-recipe-btn").on("click", function() {
     var public = 1;
     if ($("#private-recipe").val() === "private") {
