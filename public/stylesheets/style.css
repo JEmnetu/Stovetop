@@ -142,8 +142,36 @@ body {
 
   .flame-img{
       float: right;
+      color: white; 
+      background: none;
+      border: none;
+  }
+
+  .flame-img-recipe-page{
+    background: none;
+    border: none;
+   
+  }
+
+  .flame-img:focus{
+      border: none;
   }
 
   .cuisine-card-text{
       color: rgb(192, 192, 192) !important;
   }
+
+  .results-header{
+      margin-top: 50px;
+      background-color: rgba(255, 255, 255, 0.596);
+      border-radius: 5px;
+      padding: 10px 0px;
+      text-align: center;
+  }
+
+  /* .results-container{
+        
+      
+      
+  } */
+ 
