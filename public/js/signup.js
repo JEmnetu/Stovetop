@@ -13,6 +13,11 @@ $(document).ready(function() {
         };
 
         if (!userData.email || !userData.password) {
+            swal({
+                title: "Error",
+                text: "Please enter all fields",
+                icon: "warning"
+            });
             return;
         }
         // If we have an email and password, run the signUpUser function
@@ -36,7 +41,11 @@ $(document).ready(function() {
     }
 
     function handleLoginErr(err) {
-        alert("error!");
+        swal({
+            title: "Error",
+            text: "Account could not be created. Please try again or contact system administrator",
+            icon: "warning"
+        });
         // $("#alert .msg").text(err.responseJSON);
         // $("#alert").fadeIn(500);
     }
