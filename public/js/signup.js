@@ -4,6 +4,8 @@ $(document).ready(function() {
     var emailInput = $("input#email-input");
     var passwordInput = $("input#password-input");
 
+    swal("Welcome to Stovetop!", "Lets get cooking!");
+
     // When the signup button is clicked, we validate the email and password are not blank
     signUpForm.on("submit", function(event) {
         event.preventDefault();
@@ -13,6 +15,11 @@ $(document).ready(function() {
         };
 
         if (!userData.email || !userData.password) {
+            swal({
+                title: "Error",
+                text: "Please enter all fields",
+                icon: "warning"
+            });
             return;
         }
         // If we have an email and password, run the signUpUser function
@@ -29,14 +36,19 @@ $(document).ready(function() {
                 password: password
             })
             .then(function(data) {
-                window.location.replace("/home.html");
+                window.location.replace("/home");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch(handleLoginErr);
     }
 
     function handleLoginErr(err) {
-        $("#alert .msg").text(err.responseJSON);
-        $("#alert").fadeIn(500);
+        swal({
+            title: "Error",
+            text: "Account could not be created. Please try again or contact system administrator",
+            icon: "warning"
+        });
+        // $("#alert .msg").text(err.responseJSON);
+        // $("#alert").fadeIn(500);
     }
 });

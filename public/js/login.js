@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    console.log("test");
     // Getting references to our form and inputs
     var loginForm = $("form.login");
     var emailInput = $("input#email-input");
@@ -9,12 +9,14 @@ $(document).ready(function() {
     // When the form is submitted, we validate there's an email and password entered
     loginForm.on("submit", function(event) {
         event.preventDefault();
+        swal("click");
         var userData = {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
         };
 
         if (!userData.email || !userData.password) {
+            alert('Please try again');
             return;
         }
 
@@ -31,12 +33,7 @@ $(document).ready(function() {
                 password: password
             })
             .then(function() {
-                swal("Stovetop", "hello world");
-
-
-            })
-            .then(function() {
-                window.location.replace("/home.html");
+                window.location.replace("/home");
                 // If there's an error, log the error
             })
             .catch(function(err) {

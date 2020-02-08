@@ -1,3 +1,5 @@
+import { spawn } from "child_process";
+
 $("#add-recipe-btn").on("click", function() {
     var public = 1;
     if ($("#private-recipe").val() === "private") {
@@ -12,19 +14,22 @@ $("#add-recipe-btn").on("click", function() {
         flames: 0,
         direction: $("#direction").val().trim()
     };
-
+    if (newRecipe) {
+        alert("error");
+    }
     $.ajax({
         url: "api/recipes",
         method: "POST",
         data: newRecipe
     }).then(function() {
-        location.href = "/mystovetop";
+        location.href = "/home";
     });
 });
 
 //search button
 $("#search-btn").on("click", function() {
+
     let searchQuery = $("#search-query").val();
     location.href = "/results?keywords=" + encodeURIComponent(searchQuery);
-    
+
 });
